@@ -1,0 +1,19 @@
+{
+  "name": "jutil",
+  "description": "Simple JSON helpers for shell scripts",
+  "url": "http://github.com/dpweb/jutil/",
+  "keywords": [
+    "util",
+    "nodejs"
+  ],
+  "author": {
+    "name": "C Borkert",
+    "email": "ILIKECHEESE@dpsw.info"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dpweb/jutil.git"
+  },
+  "main": "jutil.js",
+  "version": "0.0.1"
+}
