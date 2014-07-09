@@ -15,5 +15,5 @@
     "url": "git://github.com/dpweb/jutil.git"
   },
   "main": "jutil.js",
-  "version": "0.0.1"
+  "version": "0.0.3"
 }
