@@ -104,8 +104,23 @@ var orderAttr = function(obj, order){
     return newobj;
 }
 
+var fn, indata = '';
+
+function n(f) {
+  fn = f;
+  process.stdin.on('readable', function() {
+    indata += process.stdin.read() || '';
+  })
+  process.stdin.on('end', processData);
+}
+
+function processData() {
+  console.log(JSON.stringify(fn(JSON.parse(indata))));
+}
+
 module.exports = {
   orderAttr: orderAttr,
+  n:n,
   pretty: pretty,
   diff: function(a, b){
     if(a && b){
