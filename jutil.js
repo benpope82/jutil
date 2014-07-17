@@ -86,7 +86,26 @@ var deepDiffMapper = function() {
     }
 }();
 
+var orderAttr = function(obj, order){
+    var newobj = [];
+    for(var i=0; i<obj.length; i++){
+      var oldo = obj[i];
+      var newo = {};
+      order.forEach(function(field){
+        if(oldo[field]){
+          newo[field] = oldo[field];
+          delete oldo[field];
+        }
+      })
+      for(j in oldo)
+        newo[j] = oldo[j];
+      newobj[i] = newo;
+    }
+    return newobj;
+}
+
 module.exports = {
+  orderAttr: orderAttr,
   pretty: pretty,
   diff: function(a, b){
     if(a && b){
