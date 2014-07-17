@@ -22,3 +22,10 @@ var c = {'three': 1, "two": 2, "one": 3};
 
 console.log(j.orderAttr([a,b,c], ['one', 'two']));
 ````
+
+Process piped in data (applicative)
+````
+curl -H "Accept: application/json" -s "http://something.com/$FILENAME" \
+   | node -e "require('jutil').n(function(o) {return o.result})" \
+   | # do something with this JSON object
+````
